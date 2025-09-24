@@ -9,11 +9,16 @@ namespace Diciionariosd
     internal class Acciones
     {
 
-        public string nombre { get; set; }  
-        public int matricula { get; set; }
+        public string Nombre { get; set; }  
+        public int Matricula { get; set; }
 
         private Dictionary<int, string> StudentsDictionary = new Dictionary<int, string>();
 
+        public Acciones(string nombre, int matricula)
+        {
+                Nombre = nombre;
+                Matricula = matricula;
+        }
         public void AddStudents()
         {
             Console.WriteLine("Dame la Matricula: ");
@@ -23,7 +28,7 @@ namespace Diciionariosd
             StudentsDictionary.Add(matricula, nombre);
         }
     
-        // Elimina una matrícula del diccionario
+        
         public void RemoveMatricula()
         {
             Console.WriteLine("Ingrese la matrícula a eliminar:");
@@ -38,7 +43,7 @@ namespace Diciionariosd
             }
         }
 
-        // Actualiza el nombre de una matrícula existente
+        
         public void UpdateMatricula()
         {
             Console.WriteLine("Ingrese la matrícula a actualizar:");
@@ -56,7 +61,7 @@ namespace Diciionariosd
             }
         }
 
-        // Muestra todos los estudiantes
+        
         public void Show()
         {
             Console.WriteLine("Listado de estudiantes:");
@@ -66,7 +71,7 @@ namespace Diciionariosd
             }
         }
 
-        // Busca un estudiante por matrícula
+        
         public void Search()
         {
             Console.WriteLine("Ingrese la matrícula a buscar:");
@@ -81,7 +86,7 @@ namespace Diciionariosd
             }
         }
 
-        // Cuenta el número de estudiantes
+        
         public void Count()
         {
             Console.WriteLine($"Número total de estudiantes: {StudentsDictionary.Count}");
